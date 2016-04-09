@@ -98,8 +98,8 @@ public class SortList {
 		node4.next = node5;
 //		node5.next = null;
 
-		ListNode node = sortList.rotateRight(node1);
-		
+		ListNode node = new ListNode(-1);
+//		node = sortList.rotateRight(node1);
 		while(node != null){
 			System.out.println(node.val);
 			node = node.next;

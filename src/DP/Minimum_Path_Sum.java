@@ -39,8 +39,8 @@ public class Minimum_Path_Sum {
 			}
 //			System.out.println();
 		}
-		
-		minPathSum(arrays);
+		Minimum_Path_Sum test = new Minimum_Path_Sum();
+		int length = test.minPathSum(arrays);
 		
 	}
 }

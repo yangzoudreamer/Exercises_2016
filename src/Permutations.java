@@ -11,14 +11,14 @@ public class Permutations {
 			res.add(head);
 			return res;
 		}
-		partition(nums, 0, nums.length - 1);
+		quickSort(nums, 0, nums.length - 1);
 		int len = getSizes(nums.length);
 		List<Integer> head = new ArrayList<Integer>();
 		for (int i = 0; i < nums.length; i++) {
 			head.add(nums[i]);
 		}
 		res.add(head);
-		while (len < 1) {
+		while (len > 1) {
 			List<Integer> next = new ArrayList<Integer>();
 			getNextList(nums);
 			for (int i = 0; i < nums.length; i++) {
@@ -79,11 +79,17 @@ public class Permutations {
 	public int findIndexFirstLargeI(int i, int[] nums) {
 		int index = i + 1;
 		int end = nums.length - 1;
-		int min = nums[i + 1];
-		for (int j = i + 1; j < nums.length; j++) {
-			if (min > nums[j] && nums[j] > nums[i]) {
+		int min = nums[i];
+//		for (int j = i + 1; j < nums.length; j++) {
+//			if (min > nums[j] && nums[j] > nums[i]) {
+//				index = j;
+//				min = nums[j];
+//			}
+//		}
+		for (int j = end; j > i; --j) {
+			if (nums[j] > min) {
 				index = j;
-				min = nums[j];
+				break;
 			}
 		}
 		return index;
@@ -91,16 +97,30 @@ public class Permutations {
 
 	public void reverseSubArray(int[] nums, int start) {
 		int len = nums.length - 1;
-		if ((len + start) % 2 == 0) {
-			for (int i = start; i < (len + start) / 2; i++) {
-				swap(nums, i, len--);
-			}
-		} else {
-			for (int i = start; i <= (len + start) / 2; i++) {
-				swap(nums, i, len--);
-			}
-		}
+//		if ((len + start) % 2 == 0) {
+//			for (int i = start; i < (len + start) / 2; i++) {
+//				swap(nums, i, len--);
+//			}
+//		} else {
+//			for (int i = start; i <= (len + start) / 2; i++) {
+//				swap(nums, i, len--);
+//			}
+//		}
+		
+		reverse(nums, start, len);
 	}
+	
+	public void reverse(int[] num, int start, int end) {
+        int l = start;
+        int r = end;
+        while (l < r) {
+            int tmp = num[l];
+            num[l] = num[r];
+            num[r] = tmp;
+            l++;
+            r--;
+        }
+    }
 
 	public int partition(int[] nums, int start, int end) {
 		int i = start;
@@ -134,7 +154,7 @@ public class Permutations {
 	}
 
 	public static void main(String[] args) {
-		int[] arrays = { 1, 0, 5, 2, 3 };
+		int[] arrays = {6,3,2,7,4,-1};
 		Permutations testPermutations = new Permutations();
 		testPermutations.quickSort(arrays, 0, arrays.length - 1);
 
@@ -147,6 +167,7 @@ public class Permutations {
 			System.out.println();
 		}
 		System.out.println(result.size());
+		
 
 	}
 

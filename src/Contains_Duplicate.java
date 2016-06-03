@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.HashSet;
 
-
+//test git
 public class Contains_Duplicate {
     public boolean containsDuplicate(int[] nums) {
         HashSet<Integer> set = new HashSet<Integer>();

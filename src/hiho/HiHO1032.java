@@ -1,7 +1,7 @@
 package hiho;
 
 import java.util.Scanner;
-
+//马拉车Manacher算法
 public class HiHO1032 {
 	
 	public static void main(String[] args) {
@@ -9,11 +9,11 @@ public class HiHO1032 {
 		int n =  in.nextInt();
 		while(in.hasNext()){
 			String input = in.next();
-			System.out.println(new HiHO1032().getLength(input));
+			System.out.println(getLength(input));
 		}
 	}
 	
-	public  int getLength(String str){
+	public static int getLength(String str){
 		int res = 0;
 		char[] cs = str.toCharArray();
 		char[] tmp = new char[str.length() * 2 + 3];
@@ -32,7 +32,7 @@ public class HiHO1032 {
 		return res;
 	}
 	
-	public  int manacher(char[] cc ,int len,int[] Len){
+	public static int manacher(char[] cc ,int len,int[] Len){
 		int maxLen = 0; 
 		int ans = 0;
 		int p = 0;

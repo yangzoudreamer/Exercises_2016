@@ -14,7 +14,7 @@ class HIHO1038{
 			for(int i = 0; i < M+1;i++){
 				res[0][i] = 0;
 			}
-			for(int i = 1; i < N;i++){
+			for(int i = 1; i < N+1;i++){
 				needs[i] = Integer.valueOf(in.next());
 				values[i] = Integer.valueOf(in.next());
 			}

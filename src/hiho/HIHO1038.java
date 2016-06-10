@@ -1,7 +1,7 @@
 package hiho;
 import java.util.Scanner;
 
-public class HIHO1038{
+class HIHO1038{
 	public static void main(String[] args ){
 		Scanner in = new Scanner(System.in);
 		while(in.hasNext()){

@@ -15,7 +15,7 @@ public class OddFirstEvenLastOrderConst {
         while(head < end){
             while(head < end && !isEven(array[head])){
                 head++;
-            }
+            }wa
             while(head < end && isEven(array[end])){
                 end--;
             }
